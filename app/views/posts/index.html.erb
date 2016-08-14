@@ -1,0 +1,16 @@
+<div class="posts">
+
+  <div class="text-center">
+
+        <h1>Posts</h1>
+        <%= link_to 'New Post',  new_topic_post_path, class: "btn btn-into btn-lg" %>
+  </div>
+
+        <% @posts.each do |post| %>
+          <div class="Post">
+            <h3><%= post.title %></h3>
+            <h5><%= post.body %></h5>
+
+          </div>
+        <% end %>
+</div>

@@ -1,0 +1,16 @@
+.about {
+
+  .background {
+    background-image: asset-url("about.jpg");
+    //background-color: orange;
+    height: calc(100vh - 52px);
+    width: 100%;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+}

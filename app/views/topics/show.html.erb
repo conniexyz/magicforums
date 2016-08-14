@@ -1,0 +1,24 @@
+<div class="topics">
+
+  <div class="topic-holder">
+
+<h1><%= @topic.title %></h1>
+<p><%= @topic.description %></p>
+<!-- # the destroy action, which allows you to delete topics. -->
+
+ <div class="post-holder">
+
+    <% @posts.each do |post| %>
+      <div class="topic">
+
+          <h3><%= link_to post.title, post_path(post) %></h300>
+          <h5><%= post.body %></h5>
+
+        </div>
+    <%end%>
+
+   </div>
+
+  </div>
+
+</div>

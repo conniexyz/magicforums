@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width,
                           initial-scale=1.0">
 
-    <title>F and B Forums</title>
+    <title> F n B Online </title>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all',
@@ -15,6 +15,9 @@
   </head>
 
   <body>
-    <%= yield %>
+      <div id="header">
+         <%= render partial: 'partials/header' %>
+     </div>
+        <%= yield %>
   </body>
 </html>
