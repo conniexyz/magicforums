@@ -4,10 +4,10 @@
 
       <div class="container-fluid">
 
+
+
         <div class="navbar-header">
-          <%= link_to "MagicForums",
-              root_path,
-              class:"navbar-brand" %>
+          <%= link_to "MagicForums", root_path, class: "navbar-brand" %>
 
           <button type          = "button"
                   class         = "navbar-toggle collapsed"
@@ -25,6 +25,12 @@
           <ul class="nav navbar-nav navbar-right">
 
             <li><%= link_to "About", about_path %></li>
+            <li>
+              <%= link_to about_path do %>
+                <%= fa_icon "facebook" %>
+              <% end %>
+            </li>
+
 
           </ul>
         </div>
@@ -34,3 +40,9 @@
     </nav>
 
 </div>
+
+
+
+
+<!-- <li><a href="#">Topics<span class="sr-only">(current)</span></a></li>
+<li><a href="#">Log In<span class="sr-only">(current)</span></a></li> -->
