@@ -1,12 +1,25 @@
-<div class="topics">
+<h1>Topics</h1>
 
-  <div class="text-center">           <!-- <div class="text-right">
-                                                              <div class="text-left"> -->
+<% @topics.each do |topic| %>
+     <div class="topic">
+       <h3> <%= topic.title %>             </h3>
+       <h5> <%= topic.description %> </h5>
+       <%= link_to topic.title, topic_path(topic) %>
+     </div>
+<% end %>
+
+
+
+<!-- <div class="topics">
+
+  <div class="text-center">
+
         <h1>My Topics</h1>
         <%=  link_to 'New Topic',  new_topic_path, class: "btn btn-into btn-lg" %>
   </div>
 
-        <% @topics.each do |topic| %>    <!-- Rails For Loop View -->
+        <% @topics.each do |topic| %>
+        Rails For Loop View
 
     <div class="topic">
              <h3><%= topic.title %></h3>
@@ -19,4 +32,4 @@
 
      </div>
    <% end %>
-</div>
+</div> -->
