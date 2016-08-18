@@ -11,6 +11,17 @@
     <% @posts.each do |post| %>
       <div class="topic">
 
+
+
+
+
+        <!-- <h3>  <%= link_to topic.title, topic_path(topic) %></h300> -->
+        <h3><%= link_to topic.title, topic_posts_path(topic) %></h300>
+
+
+
+
+
           <h3><%= link_to post.title, post_path(post) %></h300>
           <h5><%= post.body %></h5>
 
