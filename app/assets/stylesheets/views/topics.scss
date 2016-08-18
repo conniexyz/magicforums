@@ -1,0 +1,39 @@
+@import url(https://fonts.googleapis.com/css?family=Lobster);
+
+.topics {
+
+   background-image: asset-url("mouthwideopen1.jpg");
+   height: auto;
+   width: 100%;
+   background-repeat: no-repeat;
+   background-size: cover;
+   padding: 15px;
+  font-family: 'Lobster', cursive;
+
+  .flex-parent {
+
+    display: flex;
+    justify-content: center;
+    // align-items: center;
+    flex-wrap: wrap;
+
+    margin: 80px;
+
+  }
+
+   .flex-child {
+    flex: 0 0 400px;
+    margin: 5px;
+    padding: 20px;
+    border: 4px solid teal;
+
+    background-color: white;
+    opacity: 0.8;
+  }
+
+}
+
+.form-holder {
+    max-width: 800px;
+    margin: 0 auto;
+}

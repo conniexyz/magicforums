@@ -14,10 +14,13 @@
           <h3><%= link_to post.title, post_path(post) %></h300>
           <h5><%= post.body %></h5>
 
+
         </div>
     <%end%>
 
    </div>
+
+   <%= link_to "Delete", topic_path(@topic), method: :delete, data: { confirm: "Delete?" }, class: "btn btn-primary" %>
 
   </div>
 

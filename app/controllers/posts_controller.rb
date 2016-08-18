@@ -30,7 +30,7 @@ class PostsController < ApplicationController
                @topic = @post.topic
             end
 
-          def update
+                def update
               @topic = Topic.find_by(id: params[:topic_id])
               @post = Post.find_by(id: params[:id])
 
@@ -51,7 +51,6 @@ class PostsController < ApplicationController
           end
 
           private
-
           def post_params
                 params.require(:post) . permit(:title, :body)
           end

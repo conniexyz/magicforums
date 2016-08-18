@@ -1,35 +1,23 @@
-<h1>Topics</h1>
+  <div class="topics text-center">
 
-<% @topics.each do |topic| %>
-     <div class="topic">
-       <h3> <%= topic.title %>             </h3>
-       <h5> <%= topic.description %> </h5>
-       <%= link_to topic.title, topic_path(topic) %>
-     </div>
-<% end %>
+  <h1 class="red-text" >Topics</h1>
 
-
-
-<!-- <div class="topics">
-
-  <div class="text-center">
-
-        <h1>My Topics</h1>
-        <%=  link_to 'New Topic',  new_topic_path, class: "btn btn-into btn-lg" %>
+  <div class="form-group text-center">
+    <%= link_to "Create New Topic", new_topic_path, class: "btn btn-warning btn-lg" %>
   </div>
 
-        <% @topics.each do |topic| %>
-        Rails For Loop View
+<div class="flex-parent">
+  <% @topics.each do |topic| %>
+       <div class="topic flex-child">
+         <h3> <%= topic.title %>             </h3>
+         <h5> <%= topic.description %> </h5>
 
-    <div class="topic">
-             <h3><%= topic.title %></h3>
-             <h5><%= topic.description%></h5>
+         <%= link_to 'View Posts', topic_posts_path(topic), class: "btn btn-danger" %>
+         <%= link_to 'Edit Topic', edit_topic_path(topic), class: "btn btn-primary" %>
+         <%= link_to "Delete", topic_path(topic), method: :delete, data: { confirm: "Delete?" }, class: "btn btn-info" %>
 
-             <%= link_to topic.title, topic_posts_path(topic) %>
+       </div>
+  <% end %>
+ </div>
 
-            <%= link_to 'Edit Topic' , edit_topic_path(topic), class: "btn btn-into btn-lg mar20top" %>
-            <%= link_to "Delete", topic_path(topic), method: :delete, data: { confirm: "Delete?" } %>
-
-     </div>
-   <% end %>
-</div> -->
+ </div>
