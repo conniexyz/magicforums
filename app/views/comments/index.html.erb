@@ -1,0 +1,22 @@
+<div class="comments">
+
+  <div class="text-center">
+        <h1 class="red-text"> Comments</h1>
+
+        <%= link_to 'Create New Comment',  new_topic_post_comment_path, class: "btn btn-into btn-lg" %>
+  </div>
+
+        <% @comments.each do |comment| %>
+
+          <div class="Comment">
+            <h5><%= comment.body %></h5>
+
+            <!-- <%= link_to 'View Comments', topic_post_comment_path(@topic, @post, comment), class: "btn btn-danger" %> -->
+            <%= link_to 'Edit Comment', edit_topic_post_comment_path(@topic, @post, comment), class: "btn btn-primary" %>
+            <%= link_to "Delete", topic_post_comment_path(@topic, @post, comment), method: :delete, data: { confirm: "Delete?" }, class: "btn btn-info" %>
+
+
+            </div>
+        <% end %>
+
+</div>

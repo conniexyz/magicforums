@@ -12,11 +12,12 @@
             <h3><%= post.title %></h3>
             <h5><%= post.body %></h5>
 
-
+            <%= link_to 'View Comments', topic_post_comments_path(@topic, post), class: "btn btn-danger" %>
             <%= link_to 'Edit Post', edit_topic_post_path(@topic, post), class: "btn btn-primary" %>
             <%= link_to "Delete", topic_post_path(@topic, post), method: :delete, data: { confirm: "Delete?" }, class: "btn btn-info" %>
 
-          </div>
+
+            </div>
         <% end %>
 
 </div>
