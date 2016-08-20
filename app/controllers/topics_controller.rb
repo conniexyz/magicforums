@@ -1,8 +1,7 @@
 class TopicsController < ApplicationController
 
   def index
-    @topics = Topic.all
-    # @topics = Topic.all.order(created_at: :desc)
+    @topics = Topic.all.order(created_at: :ASC)
   end
 
   def new
@@ -10,9 +9,9 @@ class TopicsController < ApplicationController
   end
 
   def create
-    # binding.binding.pry
 
     @topic = Topic.new(topic_params)
+    # binding.pry
 
     if @topic.save
       #       flash[:success] = "You've created a new topic."
@@ -20,7 +19,7 @@ class TopicsController < ApplicationController
     else
       #       flash[:danger] = @topic.errors.full_messages
       redirect_to new_topic_path
-      #       # render new_topic_path
+      #       render new_topic_path
     end
   end
 

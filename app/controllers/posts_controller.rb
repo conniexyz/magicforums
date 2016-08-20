@@ -46,6 +46,7 @@ class PostsController < ApplicationController
               @topic = @post.topic
 
               if @post.destroy
+                  flash.now[:success] = "Your post was deleted."
                 redirect_to topic_posts_path(@topic)
              end
           end
