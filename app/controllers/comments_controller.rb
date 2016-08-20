@@ -1,14 +1,9 @@
 class CommentsController<ApplicationController
 
   def index
-    # @topics = Topic.all
-    # @posts = Post.all
-    # @comments = Comment.all
-    # this one needs a topic and post id (Jun)
     @post = Post.find_by(id: params[:post_id])
     @topic = Topic.find_by(id: params[:topic_id])
     @comments = @post.comments.order("created_at ASC")
-
   end
 
   def new
@@ -19,36 +14,29 @@ class CommentsController<ApplicationController
 
   def create
     @topic = Topic.find_by(id: params[:topic_id])
-    # @post = Post.new(post_params.merge(topic_id: params[:topic_id]))
     @post = Post.find_by(id: params[:post_id])
     @comment = Comment.create(comment_params.merge(post_id: @post.id))
     @new_comment = Comment.new
 
-    if  @comment.save
-      flash[:success] = "Your comment was posted."
-       redirect_to topic_post_comments_path(@topic, @post)
-      # you're creaing a comment not a post (Jun)
-    else
-      flash[:danger] = @comment.errors.full_messages
-      render :new
-    end
+       if  @comment.save
+         flash[:success] = "Your comment was posted."
+         redirect_to topic_post_comments_path(@topic, @post)
+       else
+         flash[:danger] = @comment.errors.full_messages
+         render :new
+        end
   end
 
-
   def edit
-
     @topic = Topic.find_by(id: params[:topic_id])
     @post = Post.find_by(id: params[:post_id])
     @comment = Comment.find_by(id: params[:id])
-
-    # this one is missing the comment cause you're editing an existing comment (Jun)
   end
 
   def update
     @topic = Topic.find_by(id: params[:topic_id])
     @post = Post.find_by(id: params[:post_id])
     @comment = Comment.find_by(id: params[:id])
-    # same with this one, you're updating a comment not a post in the comments controller(Jun)
 
     if @comment.update(comment_params)
       flash.now[:success] = "Your comment was updated."

@@ -1,9 +1,10 @@
-  <div class="topics text-center">
-
-  <h1 class="red-text" >Topics</h1>
+  <div class ="topics">
+                                                                            <!-- <div class ="topics text-center"> -->
+         <h1 class = "text-center"; > T O P I C S </h>
 
   <div class="form-group text-center">
     <%= link_to "Create New Topic", new_topic_path, class: "btn btn-warning btn-lg" %>
+
   </div>
 
 <div class="flex-parent">
@@ -12,9 +13,10 @@
          <h3> <%= topic.title %>             </h3>
          <h5> <%= topic.description %> </h5>
 
-         <%= link_to 'View Posts', topic_posts_path(topic), class: "btn btn-danger" %>
-         <%= link_to 'Edit Topic', edit_topic_path(topic), class: "btn btn-primary" %>
-         <%= link_to "Delete", topic_path(topic), method: :delete, data: { confirm: "Delete?" }, class: "btn btn-info" %>
+
+         <%= link_to 'Posts', topic_posts_path(topic), class: "btn btn-danger" %>
+         <%= link_to 'Edit Topic', edit_topic_path(topic), class: "btn btn-danger" %>
+         <%= link_to "Delete", topic_path(topic), method: :delete, data: { confirm: "Delete?" }, class: "btn btn-warning" %>
 
        </div>
   <% end %>

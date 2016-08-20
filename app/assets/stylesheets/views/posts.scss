@@ -1,15 +1,11 @@
-// @import url(https://fonts.googleapis.com/css?family=Lobster);
-//refer to application.scss
-.topics {
-
-   background-image: asset-url("fruit_orange.jpg");
+.posts {
+  background-color: #FFF8DC;
+  //  background-image: asset-url("food.jpg");
    height: auto;
    width: 100%;
    background-repeat: no-repeat;
    background-size: cover;
    padding: 15px;
-  // font-family: 'Lobster', cursive;
-  // refer to common.scss
 
   .flex-parent {
 
