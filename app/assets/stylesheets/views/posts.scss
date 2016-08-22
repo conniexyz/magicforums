@@ -1,7 +1,7 @@
 .posts {
   background-color: #FFF8DC;
   //  background-image: asset-url("food.jpg");
-   height: auto;
+   min-height: calc(100vh - 52px);
    width: 100%;
    background-repeat: no-repeat;
    background-size: cover;
