@@ -39,13 +39,25 @@ gem 'jbuilder', '~> 2.5'
 # gem 'capistrano-rails', group: :development
 
 group :development, :test do
-  # Call 'byebug' anywhere in the code to stop execution and get a debugger console
+gem 'rspec-rails', '~> 3.5'
+gem 'factory_girl_rails'
+gem 'faker'
+
+# Call 'byebug' anywhere in the code to stop execution and get a debugger console
 gem 'pry'
 end
 
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.
   gem 'web-console'
+end
+
+group :test do
+    gem 'database_cleaner'
+    gem 'shoulda-matchers'
+    gem 'rails-controller-testing'
+    gem 'capybara'
+    gem 'selenium-webdriver'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
