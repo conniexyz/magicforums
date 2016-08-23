@@ -14,10 +14,10 @@ class TopicsController < ApplicationController
     # binding.pry
 
     if @topic.save
-      #       flash[:success] = "You've created a new topic."
+       flash[:success] = "You've created a new topic."
       redirect_to topics_path
     else
-      #       flash[:danger] = @topic.errors.full_messages
+       flash[:danger] = @topic.errors.full_messages
       redirect_to new_topic_path
       #       render new_topic_path
     end
@@ -32,7 +32,7 @@ class TopicsController < ApplicationController
     @topic = Topic.find_by(id: params[:id])
 
     if @topic.update(topic_params)
-      redirect_to topic_path(@topic)
+      redirect_to topics_path
     else
       redirect_to edit_topic_path(@topic)
     end

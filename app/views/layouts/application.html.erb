@@ -17,7 +17,9 @@
   <body>
       <div id="header">
          <%= render partial: 'partials/header' %>
-     </div>
+      </div>
+      
+        <%= render partial: "partials/flash_messages" %>
         <%= yield %>
   </body>
 </html>
