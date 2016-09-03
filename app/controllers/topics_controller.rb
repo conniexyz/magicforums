@@ -19,7 +19,7 @@ class TopicsController < ApplicationController
     else
        flash[:danger] = @topic.errors.full_messages
       redirect_to new_topic_path
-      #       render new_topic_path
+      #  render new_topic_path
     end
   end
 
@@ -29,11 +29,14 @@ class TopicsController < ApplicationController
   end
 
   def update
+    # binding.pry
     @topic = Topic.find_by(id: params[:id])
 
     if @topic.update(topic_params)
+      flash[:success] = "You've updated."
       redirect_to topics_path
     else
+      flash[:danger] = @topic.errors.full_messages
       redirect_to edit_topic_path(@topic)
     end
   end
@@ -41,8 +44,10 @@ class TopicsController < ApplicationController
   def destroy
     @topic = Topic.find_by(id: params[:id])
     if @topic.destroy
+      flash[:success] = "You've destroy."
       redirect_to topics_path
     else
+      flash[:danger] = @topic.errors.full_messages
       redirect_to topic_path(@topic)
     end
   end

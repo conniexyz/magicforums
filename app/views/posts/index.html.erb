@@ -1,37 +1,18 @@
 <div class="posts">
-
   <div class="text-center">
         <h1 class="red-text"> P O S T S</h1>
-
         <%= link_to 'Create New Post',  new_topic_post_path, class: "btn btn-into btn-lg" %>
   </div>
-
         <% @posts.each do |post| %>
-
-
          <div class="image-box">
-            <%= image_tag "Saudi_Traditional.jpg", class: "img" %>
+            <%= image_tag post.image, class: "img" %>
          </div>
-
-
-
           <div class="Post">
             <h3><%= post.title %></h3>
             <h5><%= post.body %></h5>
-            
-
-
             <%= link_to 'Comments', topic_post_comments_path(@topic, post), class: "btn btn-danger" %>
             <%= link_to 'Edit Post', edit_topic_post_path(@topic, post), class: "btn btn-danger" %>
             <%= link_to "Delete", topic_post_path(@topic, post), method: :delete, data: { confirm: "Delete?" }, class: "btn btn-primary" %>
-
-
-
-
-
-
-
-            </div>
+          </div>
         <% end %>
-
 </div>

@@ -2,7 +2,7 @@
 
   RSpec.describe LandingController, type: :controller do
   
-   describe "index" do
+   describe "testing landing page" do
     it "should render index" do
         
         get :index

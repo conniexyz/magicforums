@@ -39,12 +39,12 @@ gem 'bcrypt', '~> 3.1.7'
 # gem 'capistrano-rails', group: :development
 
 group :development, :test do
-gem 'rspec-rails', '~> 3.5'
-gem 'factory_girl_rails'
-gem 'faker'
-
-# Call 'byebug' anywhere in the code to stop execution and get a debugger console
-gem 'pry'
+  gem 'rspec-rails', '~> 3.5'
+  gem 'factory_girl_rails'
+  gem 'faker'
+  
+  # Call 'byebug' anywhere in the code to stop execution and get a debugger console
+  gem 'pry'
 end
 
 group :development do
@@ -53,11 +53,11 @@ group :development do
 end
 
 group :test do
-    gem 'database_cleaner'
-    gem 'shoulda-matchers'
-    gem 'rails-controller-testing'
-    gem 'capybara'
-    gem 'selenium-webdriver'
+  gem 'database_cleaner'
+  gem 'shoulda-matchers'
+  gem 'rails-controller-testing'
+  gem 'capybara'
+  gem 'selenium-webdriver'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem

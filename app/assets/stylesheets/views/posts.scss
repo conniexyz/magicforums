@@ -1,5 +1,5 @@
 .posts {
-  background-color: #FFF8DC;
+   background-color: #FFF8DC;
   //  background-image: asset-url("food.jpg");
    min-height: calc(100vh - 52px);
    width: 100%;
@@ -15,7 +15,6 @@
     flex-wrap: wrap;
 
     margin: 80px;
-
   }
 
    .flex-child {
@@ -27,9 +26,15 @@
     background-color: white;
     opacity: 0.8;
   }
-}
 
-.form-holder {
-    max-width: 800px;
-    margin: 0 auto;
+ .form-holder {
+     max-width: 800px;
+     margin: 0 auto;
+ }
+ 
+ .img{
+  width: 300px;
+  height: auto;
+ }
+ 
 }
