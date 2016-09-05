@@ -4,8 +4,6 @@
 
       <div class="container-fluid">
 
-
-
         <div class="navbar-header">
           <%= link_to "MagicForums", root_path, class: "navbar-brand" %>
 
@@ -25,7 +23,8 @@
           <ul class="nav navbar-nav navbar-right">
 
             <li><%= link_to "Topics", topics_path %></li>
-            <li><%= link_to "About", about_path %></li>
+            <li><%= link_to "About Us", about_path %></li>
+            <li><%= link_to "Register", new_user_path %></li>
             <li>
               <%= link_to about_path do %>
                 <%= fa_icon "facebook" %>
@@ -43,3 +42,4 @@
 
 <!-- <li><a href="#">Topics<span class="sr-only">(current)</span></a></li>
 <li><a href="#">Log In<span class="sr-only">(current)</span></a></li> -->
+

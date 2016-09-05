@@ -1,0 +1,34 @@
+<div class="Users">
+  <div class="form-holder">
+
+    <%= form_for(@user, url: users_path, html: { id: "user-create-form" }) do |f| %>
+      <h1 class="text-center">
+                          Register
+                         </h1>
+
+      <div class="form-group">
+        <h4> <%= f.label :text_field, "User Name" %> </h4>
+        <%= f.text_field :username, required: true, id: "user_name_field", class: 'form-control' %>
+      </div>
+
+      <div class="form-group">
+        <h4> <%= f.label :text_field, "Email" %> </h4>
+        <%= f.text_field :email, id: "user_email_field", class: 'form-control' %>
+      </div>
+      
+      <div class="form-group">
+        <h4> <%= f.label :text_field, "Password" %> </h4>
+        <%= f.password_field :password, id: "user_password_field", class: 'form-control' %>
+      </div>
+      
+      <div class="form-group">
+        <h4> <%= f.label :text_field, "Password Confirmation" %> </h4>
+        <%= f.password_field :password_confirmation, id: "user_password_confirmation_field", class: 'form-control' %>
+      </div>
+
+      <div class="form-group text-center">
+        <%= f.submit "Register", class: "btn btn-success btn-lg" %>
+      </div>
+      <% end %>
+  </div>
+</div>

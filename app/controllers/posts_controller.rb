@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-
+  
       def index
         @topic=Topic.includes(:posts).find_by(id: params[:topic_id])
         @posts = @topic.posts.order("created_at DESC")
@@ -47,7 +47,9 @@ class PostsController < ApplicationController
         end
       end
   
-    private
+   
+    #In JavaScript, some identifiers are reserved words and cannot be used as variables or function names.
+    # private
     def post_params
           params.require(:post).permit(:title, :body, :image)
     end
