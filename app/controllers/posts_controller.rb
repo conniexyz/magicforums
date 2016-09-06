@@ -11,9 +11,11 @@ class PostsController < ApplicationController
       end
   
       def create
+        
         @topic = Topic.find_by(id: params[:topic_id])
-        @post = Post.new(post_params.merge(topic_id: params[:topic_id]))
-  
+      # @post = Post.new(post_params.merge(topic_id: params[:topic_id]))
+        @post = current_user.posts.build(post_params.merge(topic_id: params[:topic_id]))
+        
         if @post.save
           redirect_to topic_posts_path(@topic)
         else
@@ -38,7 +40,7 @@ class PostsController < ApplicationController
       end
                
       def destroy
-        @topic = Post.find_by(id: params[:id])
+        @post = Post.find_by(id: params[:id])
         @topic = @post.topic
   
         if @post.destroy

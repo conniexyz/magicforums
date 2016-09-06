@@ -1,28 +1,32 @@
 class CommentsController < ApplicationController
 
+  respond_to :js
+  before_action :authenticate!, except: [:index]
   def index
     @post = Post.find_by(id: params[:post_id])
     @topic = Topic.find_by(id: params[:topic_id])
     @comments = @post.comments.order("created_at ASC")
-  end
-
-  def new
-    @topic = Topic.find_by(id: params[:topic_id])
-    @post = Post.find_by(id: params[:post_id])
     @comment = Comment.new
   end
+
+  # def new
+  #   @topic = Topic.find_by(id: params[:topic_id])
+  #   @post = Post.find_by(id: params[:post_id])
+  #   @comment = Comment.new
+  # end
 
   def create
     @topic = Topic.find_by(id: params[:topic_id])
     @post = Post.find_by(id: params[:post_id])
-    @comment = Comment.create(comment_params.merge(post_id: @post.id))
+ #  @comment = Comment.create(comment_params.merge(post_id: @post.id))
+    @comment = current_user.comments.build(comment_params.merge(post_id: @post.id))
     @new_comment = Comment.new
 
        if  @comment.save
-         flash[:success] = "Your comment was posted."
+         flash.now[:success] = "Your comment was posted."
          redirect_to topic_post_comments_path(@topic, @post)
        else
-         flash[:danger] = @comment.errors.full_messages
+         flash.now[:danger] = @comment.errors.full_messages
          render :new
         end
   end

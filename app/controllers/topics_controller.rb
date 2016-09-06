@@ -1,5 +1,9 @@
-class TopicsController<ApplicationController
+class TopicsController < ApplicationController
 
+   before_action :authenticate!, only: [:create, :edit, :update, :new, :destroy]
+    # OR 
+    # before_action :authenticate!, exception: [:index]
+  
   def index
     @topics = Topic.all.order(created_at: :ASC)
   end
@@ -9,8 +13,8 @@ class TopicsController<ApplicationController
   end
 
   def create
-
-    @topic = Topic.new(topic_params)
+    @topic = current_user.topics.build(topic_params)
+  # @topic = Topic.new(topic_params.merge({user_id: current_user.id})      by JUN 
     # binding.pry
 
     if @topic.save

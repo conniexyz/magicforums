@@ -11,6 +11,8 @@ gem 'bootstrap-sass'
 gem "font-awesome-rails"
 gem 'carrierwave'
 gem 'mini_magick', '~> 3.5.0'
+gem 'responders'
+
 
 # Use Puma as the app server
 gem 'puma', '~> 3.0'
@@ -34,7 +36,7 @@ gem 'jbuilder', '~> 2.5'
 
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
-
+gem 'figaro'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
@@ -50,6 +52,7 @@ end
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.
   gem 'web-console'
+  gem 'letter_opener'
 end
 
 group :test do
