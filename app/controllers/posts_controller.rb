@@ -48,8 +48,7 @@ class PostsController < ApplicationController
           redirect_to topic_posts_path(@topic)
         end
       end
-  
-   
+
     #In JavaScript, some identifiers are reserved words and cannot be used as variables or function names.
     # private
     def post_params

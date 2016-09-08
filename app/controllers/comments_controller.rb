@@ -18,17 +18,16 @@ class CommentsController < ApplicationController
   def create
     @topic = Topic.find_by(id: params[:topic_id])
     @post = Post.find_by(id: params[:post_id])
- #  @comment = Comment.create(comment_params.merge(post_id: @post.id))
+    
     @comment = current_user.comments.build(comment_params.merge(post_id: @post.id))
     @new_comment = Comment.new
 
        if  @comment.save
          flash.now[:success] = "Your comment was posted."
-         redirect_to topic_post_comments_path(@topic, @post)
        else
          flash.now[:danger] = @comment.errors.full_messages
          render :new
-        end
+       end
   end
 
   def edit

@@ -1,21 +1,13 @@
-<div class="topics posts">
-   <div class="form-holder">
-     <%= form_for(@comment, url:  topic_post_comments_path(@topic, @post), html: { id: "post-create-form" }) do |f| %>
-        <h1 class="text-center">
-              Create Comment
-        </h1>
+<div class="Comment">
+ <div  class="image-box">
+  <% if comment_in_the_partial.image.present? %>
+   <%= image_tag comment_in_the_partial.image, class: "img-setting img-responsive center-block" %>
+  <% end %>
+ </div>
+ <h5> <%= comment_in_the_partial.body %></h5>
+ <%= link_to 'Edit Comment', edit_topic_post_comment_path(@topic, post_in_partial, comment_in_the_partial), class: "btn btn-primary" %>
+ <%= link_to "Delete", topic_post_comment_path(@topic, post_in_partial, comment_in_the_partial), method: :delete, data: { confirm: "Delete?" }, class: "btn btn-info" %>
 
-        <div class="form-group">
-            <h4> <%= f.label :text_field, "Body" %> </h4>
-                 <%= f.text_area :body, id: "comment_body_field", class: 'form-control' %>
-             </div>
+</div>
 
-        <div class="form-group text-center">
-                  <%= f.submit "Create Comment", class: "btn btn-success btn-lg" %>
-             </div>
-          <% end %>
-        </div>
-  </div>
-  
-  
-  
+

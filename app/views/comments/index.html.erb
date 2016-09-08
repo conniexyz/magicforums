@@ -1,36 +1,34 @@
 <div class="comments">
+ <div class="text-center">
+  <p>
+   <%= image_tag @post.image, class: 'img-responsive img-setting center-block' %>
+    
+  </p>
   
-  <div class="text-center">
-    <p><%= @post.title %></p>
-    <%= image_tag @post.image %>
-    <p><%= @post.body %></p>
-  </div>
+ 
+  <p>
+      <%= @post.title %>
+  </p>
+  <p>
+      <%= @post.body %>
+  </p>
+ 
 
-<div class="text-center">
-        <h1 class="red-text"> Comments</h1>
-
-        <%= link_to 'Create New Comment',  new_topic_post_comment_path, class: "btn btn-into btn-lg" %>
-  </div>
-
-    <% @comments.each do |comment| %>
-        
-    <%= render partial: "comment", locals: { comment: comment, post: @post } %>
-
-      <div class="Comment">
-        <h5><%= comment.body %></h5>
-
-      <!-- <%= link_to 'View Comments', topic_post_comment_path(@topic, @post, comment), class: "btn btn-danger" %> -->
-          <%= link_to 'Edit Comment', edit_topic_post_comment_path(@topic, @post, comment), class: "btn btn-primary" %>
-          <%= link_to "Delete", topic_post_comment_path(@topic, @post, comment), method: :delete, data: { confirm: "Delete?" }, class: "btn btn-info" %>
-
-
-            </div>
-      <% end %>
-        
-    <div id="comments-form-container">
-        <%= render partial: "create_form", locals: { comment: @comment, post: @post } %>
-        </div>
-
-</div>
+ <div id="comments">
+  <% @comments.each do |comment| %>
+   <%= render partial: "comment", locals: { comment_in_the_partial: comment, post_in_partial: @post } %>
+    <% end %>
+    </div>
+    <div>
+     <div id="comments-form-container">
+      <%= render partial: "create_form", locals: { comment: @comment, post: @post } %>
+     </div>
+ </div>
+  
+  
+ </div>
 
 
+
+
+ <!--<h3 class="red-text"> C O M M E N T S </h3>-->

@@ -13,6 +13,8 @@ gem 'carrierwave'
 gem 'mini_magick', '~> 3.5.0'
 gem 'responders'
 
+gem 'remotipart', github: 'sr3d/remotipart'
+gem 'kaminari'
 
 # Use Puma as the app server
 gem 'puma', '~> 3.0'
